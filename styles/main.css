@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -14,5 +16,47 @@ picture {
 
 body {
   font-size: 100%;
-  background-color: aquamarine;
+  background-image: url(../images/CLIPBOARD.jpg);
+  background-repeat: no-repeat;
+  font-family: 'Comic Neue', cursive;
+}
+
+.boardtic {
+  height: 600px;
+  width: 600px;
+  background-color: gray, 1;
+  font-family: 'Comic Neue', cursive;
+  font-size: 100px;
+  color: black;
+  text-align: center;
+  margin-left: 600px;
+}
+
+.boardtic .row:not(:last-child) {
+  border-bottom: 5px solid black;
+  height: 200px;
+}
+
+.boardtic .row .cell:not(:last-child) {
+  width: 200px;
+  height: 200px;
+  border-right: 5px solid black;
+  float: left;
+  padding: 50px;
+}
+
+h1 {
+  font-size: 100px;
+  margin-left: 440px;
+  padding-top: 405px;
+}
+
+button {
+  font-size: 50px;
+  background-color: burlywood;
+  color: brown;
+  border-color: brown;
+  border-radius: 50px;
+  margin-top: -200px;
+  margin-left: 1200px;
 }
