@@ -32,17 +32,23 @@ body {
   margin-left: 600px;
 }
 
-.boardtic .row:not(:last-child) {
-  border-bottom: 5px solid black;
+.boardtic .row {
   height: 200px;
 }
 
-.boardtic .row .cell:not(:last-child) {
+.boardtic .row:not(:last-child) {
+  border-bottom: 5px solid black;
+}
+
+.boardtic .row .cell {
   width: 200px;
   height: 200px;
-  border-right: 5px solid black;
   float: left;
   padding: 50px;
+}
+
+.boardtic .row .cell:not(:last-child) {
+  border-right: 5px solid black;
 }
 
 h1 {
