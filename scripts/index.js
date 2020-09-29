@@ -61,6 +61,13 @@ const changePlayerToPlay = () => {
 };
 
 // 3 //
+const checkIfPlayerWin = (player) => {
+  return solutions.some((solution) => {
+    return solution.every((positionValue) => {
+      return player === board[positionValue];
+    });
+  });
+};
 
 const handleClick = (event) => {
   const cellClicked = event.target;
@@ -68,6 +75,8 @@ const handleClick = (event) => {
   cellClicked.removeEventListener('click', handleClick);
   const positionPlayed = cells.indexOf(cellClicked);
   board[positionPlayed] = playerTurn;
+
+  const ifPlayerWin = checkIfPlayerWin(playerTurn);
 
   changePlayerToPlay();
 };
