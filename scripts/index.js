@@ -35,7 +35,7 @@ const cellClick = document.querySelector('.cell');
 // EVENTO //
 cellClick.addEventListener('click', cellClick); */
 
-const cells = Array.from(document.querySelectorAll('.boardtic > .row'));
+const cells = Array.from(document.querySelectorAll('.boardtic > .cell'));
 
 const solutions = [
   [0, 1, 2],
@@ -88,3 +88,11 @@ const addHandleClick = (cell) => {
 
 // 1 //
 cells.forEach(addHandleClick);
+
+// BOTON RESET //
+
+const resetBoard = () => {
+  document.getElementsByClassName('boardtic').reset();
+};
+
+cell.addEventListener('click', reset);
