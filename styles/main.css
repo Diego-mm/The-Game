@@ -27,17 +27,26 @@ body {
   background-color: gray, 1;
   font-family: 'Comic Neue', cursive;
   font-size: 100px;
-  color: black;
+  color: brown;
   text-align: center;
   margin-left: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
 }
 
-.boardtic .row {
+.cell {
+  border: 1px solid;
+  flex-basis: 33%;
+  height: 10vh;
+}
+/* .boardtic .row {
   height: 200px;
 }
 
 .boardtic .row:not(:last-child) {
-  border-bottom: 5px solid black;
+  border-bottom: 5px solid rgb(184, 112, 5);
 }
 
 .boardtic .row .cell {
@@ -48,8 +57,8 @@ body {
 }
 
 .boardtic .row .cell:not(:last-child) {
-  border-right: 5px solid black;
-}
+  border-right: 5px solid rgb(184, 112, 5);
+} */
 
 h1 {
   font-size: 100px;
