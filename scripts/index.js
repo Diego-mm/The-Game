@@ -107,9 +107,9 @@ const handleClick = (event) => {
   if (ifPlayerWin) {
     addScore(playerTurn);
     showWinner(playerTurn);
-
-    /* playNewGame(); */
   }
+
+  /* playNewGame(); */
 
   changePlayerToPlay();
 };
@@ -137,6 +137,11 @@ function playNewGame() {
   cells.forEach(addHandleClick);
 }
 
+/* const closeButton = document.querySelector('button[class="close"]');
+    closeButton.removeEventListener('click', showWinner);
+    function closeButton(playerTurn) {
+      console.log('hola');
+ */
 // TODO:
 // Cuando hay ganador se muestra la pantalla de ganador sobre el tablero
 // La pantalla de ganador tiene un botón de close, que cuando lo presiono debe:
