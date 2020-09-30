@@ -19,6 +19,7 @@ body {
   background-image: url(../images/CLIPBOARD.jpg);
   background-repeat: no-repeat;
   font-family: 'Comic Neue', cursive;
+  position: relative;
 }
 
 .boardtic {
@@ -39,24 +40,25 @@ body {
 
 .cell {
   border: 5px solid;
+
   flex-basis: 33%;
   height: 10vh;
 }
 
 .cell:nth-last-of-type(5) {
-  border: 1px solid;
+  border: 1px;
 }
 
 .cell:nth-last-of-type(2),
 .cell:nth-last-of-type(8) {
-  border-left: 1px solid;
-  border-right: 1px solid;
+  border-left: 1px;
+  border-right: 1px;
 }
 
 .cell:nth-last-of-type(4),
 .cell:nth-last-of-type(6) {
-  border-top: 1px solid;
-  border-bottom: 1px solid;
+  border-top: 1px;
+  border-bottom: 1px;
 }
 
 /* .boardtic .row {
@@ -88,6 +90,7 @@ h2 {
   font-size: 75px;
   font-weight: bold;
   color: brown;
+  margin-top: 100px;
 }
 dt {
   font-size: 50px;
@@ -95,9 +98,11 @@ dt {
   color: rgb(184, 112, 5);
 }
 dd {
-  font-size: 35px;
+  font-size: 45px;
   font-weight: bold;
   color: rgb(184, 112, 5);
+  margin-left: 70px;
+  margin-top: 10px;
 }
 button {
   font-size: 50px;
@@ -105,8 +110,13 @@ button {
   color: brown;
   border-color: brown;
   border-radius: 50px;
-  margin-top: -200px;
+  /* margin-top: 13px; */
   margin-left: 1200px;
+}
+
+.score {
+  margin-top: -595px;
+  margin-left: 255px;
 }
 
 .boardtic aside {
@@ -124,16 +134,17 @@ button {
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .boardtic aside h2 {
-  font-size: 1.75rem;
+  font-size: 5rem;
 }
 
 .boardtic aside p {
-  font-size: 2rem;
+  font-size: 10rem;
   font-weight: bold;
+  margin-top: 10px;
 }
 
 .boardtic.winner aside {

@@ -129,8 +129,6 @@ const reset = document.querySelector('button[type="reset"]');
 reset.addEventListener('click', playNewGame);
 
 function playNewGame() {
-  /* console.log('hola'); */
-  /* document.querySelector('.boardtic').classList.remove('.boardtic'); */
   cells.forEach((cell) => (cell.innerText = ''));
   board = [null, null, null, null, null, null, null, null, null];
   playerTurn = 'X';
