@@ -40,6 +40,9 @@ const cells = Array.from(document.querySelectorAll('.boardtic > .cell'));
 const playerXScoreElement = document.getElementById('player-x-score');
 const playerOScoreElement = document.getElementById('player-o-score');
 
+const winnerDisplay = document.querySelector('.boardtic');
+const winnerDisplayP = document.querySelector('.boardtic > aside > p');
+
 const solutions = [
   [0, 1, 2],
   [3, 4, 5],
@@ -87,6 +90,11 @@ const addScore = (player) => {
   playerOScoreElement.innerText = playerOScore;
 };
 
+const showWinner = (player) => {
+  winnerDisplay.classList.add('winner');
+  winnerDisplayP.innerText = player;
+};
+
 const handleClick = (event) => {
   const cellClicked = event.target;
   cellClicked.innerText = playerTurn;
@@ -98,6 +106,7 @@ const handleClick = (event) => {
   console.log(cells);
   if (ifPlayerWin) {
     addScore(playerTurn);
+    showWinner(playerTurn);
 
     /* playNewGame(); */
   }
@@ -115,7 +124,7 @@ cells.forEach(addHandleClick);
 
 // BOTON RESET //
 
-const reset = document.querySelector('button');
+const reset = document.querySelector('button[type="reset"]');
 
 reset.addEventListener('click', playNewGame);
 
@@ -127,3 +136,9 @@ function playNewGame() {
   playerTurn = 'X';
   cells.forEach(addHandleClick);
 }
+
+// TODO:
+// Cuando hay ganador se muestra la pantalla de ganador sobre el tablero
+// La pantalla de ganador tiene un botón de close, que cuando lo presiono debe:
+// 1 Llamar la function playNewGame()
+// 2 Remover la clase winner del elemento boardtic
