@@ -37,6 +37,9 @@ cellClick.addEventListener('click', cellClick); */
 
 const cells = Array.from(document.querySelectorAll('.boardtic > .cell'));
 
+const playerXScoreElement = document.getElementById('player-x-score');
+const playerOScoreElement = document.getElementById('player-o-score');
+
 const solutions = [
   [0, 1, 2],
   [3, 4, 5],
@@ -60,6 +63,10 @@ const changePlayerToPlay = () => {
   }
 };
 
+// Players //
+let playerXScore = 0;
+let playerOScore = 0;
+
 // 3 //
 const checkIfPlayerWin = (player) => {
   return solutions.some((solution) => {
@@ -67,6 +74,17 @@ const checkIfPlayerWin = (player) => {
       return player === board[positionValue];
     });
   });
+};
+
+const addScore = (player) => {
+  if (player === 'X') {
+    playerXScore = playerXScore + 1;
+  } else {
+    playerOScore = playerOScore + 1;
+  }
+
+  playerXScoreElement.innerText = playerXScore;
+  playerOScoreElement.innerText = playerOScore;
 };
 
 const handleClick = (event) => {
@@ -77,6 +95,12 @@ const handleClick = (event) => {
   board[positionPlayed] = playerTurn;
 
   const ifPlayerWin = checkIfPlayerWin(playerTurn);
+  console.log(cells);
+  if (ifPlayerWin) {
+    addScore(playerTurn);
+
+    /* playNewGame(); */
+  }
 
   changePlayerToPlay();
 };
@@ -91,8 +115,15 @@ cells.forEach(addHandleClick);
 
 // BOTON RESET //
 
-const resetBoard = () => {
-  document.getElementsByClassName('boardtic').reset();
-};
+const reset = document.querySelector('button');
 
-cell.addEventListener('click', reset);
+reset.addEventListener('click', playNewGame);
+
+function playNewGame() {
+  /* console.log('hola'); */
+  /* document.querySelector('.boardtic').classList.remove('.boardtic'); */
+  cells.forEach((cell) => (cell.innerText = ''));
+  board = [null, null, null, null, null, null, null, null, null];
+  playerTurn = 'X';
+  cells.forEach(addHandleClick);
+}
