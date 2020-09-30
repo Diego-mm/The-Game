@@ -38,10 +38,27 @@ body {
 }
 
 .cell {
-  border: 1px solid;
+  border: 5px solid;
   flex-basis: 33%;
   height: 10vh;
 }
+
+.cell:nth-last-of-type(5) {
+  border: 1px solid;
+}
+
+.cell:nth-last-of-type(2),
+.cell:nth-last-of-type(8) {
+  border-left: 1px solid;
+  border-right: 1px solid;
+}
+
+.cell:nth-last-of-type(4),
+.cell:nth-last-of-type(6) {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+
 /* .boardtic .row {
   height: 200px;
 }
@@ -67,6 +84,21 @@ h1 {
   padding-top: 405px;
 }
 
+h2 {
+  font-size: 75px;
+  font-weight: bold;
+  color: brown;
+}
+dt {
+  font-size: 50px;
+  font-weight: bold;
+  color: rgb(184, 112, 5);
+}
+dd {
+  font-size: 35px;
+  font-weight: bold;
+  color: rgb(184, 112, 5);
+}
 button {
   font-size: 50px;
   background-color: burlywood;
