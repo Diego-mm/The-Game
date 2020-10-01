@@ -135,10 +135,10 @@ function playNewGame() {
   cells.forEach(addHandleClick);
 }
 
-/* const closeButton = document.querySelector('button[class="close"]');
-    closeButton.removeEventListener('click', showWinner);
-    function closeButton(playerTurn) {
-      console.log('hola');
+/*  const closeButton = document.querySelector('button[type="close"]');
+  closeButton.removeEventListener('click', winnerDisplay);
+function closeButton() {
+    console.log('hola');
  */
 // TODO:
 // Cuando hay ganador se muestra la pantalla de ganador sobre el tablero
