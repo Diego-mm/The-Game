@@ -42,7 +42,9 @@ const playerOScoreElement = document.getElementById('player-o-score');
 
 const winnerDisplay = document.querySelector('.boardtic');
 const winnerDisplayP = document.querySelector('.boardtic > aside > p');
-
+const winnerDisplayCloseButton = document.querySelector(
+  '.boardtic > aside > button',
+);
 const solutions = [
   [0, 1, 2],
   [3, 4, 5],
@@ -56,13 +58,13 @@ const solutions = [
 
 let board = [null, null, null, null, null, null, null, null, null];
 
-let playerTurn = 'X';
+let playerTurn = 'x';
 
 const changePlayerToPlay = () => {
-  if (playerTurn === 'X') {
-    playerTurn = 'O';
+  if (playerTurn === 'x') {
+    playerTurn = 'o';
   } else {
-    playerTurn = 'X';
+    playerTurn = 'x';
   }
 };
 
@@ -80,7 +82,7 @@ const checkIfPlayerWin = (player) => {
 };
 
 const addScore = (player) => {
-  if (player === 'X') {
+  if (player === 'x') {
     playerXScore = playerXScore + 1;
   } else {
     playerOScore = playerOScore + 1;
@@ -131,15 +133,17 @@ reset.addEventListener('click', playNewGame);
 function playNewGame() {
   cells.forEach((cell) => (cell.innerText = ''));
   board = [null, null, null, null, null, null, null, null, null];
-  playerTurn = 'X';
+  playerTurn = 'x';
   cells.forEach(addHandleClick);
 }
 
-/*  const closeButton = document.querySelector('button[type="close"]');
-  closeButton.removeEventListener('click', winnerDisplay);
-function closeButton() {
-    console.log('hola');
- */
+winnerDisplayCloseButton.addEventListener('click', closeWinnerDisplay);
+
+function closeWinnerDisplay(event) {
+  winnerDisplay.classList.remove('winner');
+  playNewGame();
+}
+
 // TODO:
 // Cuando hay ganador se muestra la pantalla de ganador sobre el tablero
 // La pantalla de ganador tiene un botón de close, que cuando lo presiono debe:
