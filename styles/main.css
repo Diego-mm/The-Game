@@ -40,33 +40,32 @@ body {
 
 .cell {
   border: 5px solid;
-
   flex-basis: 33%;
   height: 10vh;
 }
 
 .cell:nth-last-of-type(5) {
-  border: 1px;
+  border: none;
 }
 
 .cell:nth-last-of-type(2),
 .cell:nth-last-of-type(8) {
-  border-left: 1px;
-  border-right: 1px;
+  border-left: none;
+  border-right: none;
 }
 
 .cell:nth-last-of-type(4),
 .cell:nth-last-of-type(6) {
-  border-top: 1px;
-  border-bottom: 1px;
+  border-top: none;
+  border-bottom: none;
 }
 
 /* .boardtic .row {
-  height: 200px;
+  height: 20none;
 }
 
 .boardtic .row:not(:last-child) {
-  border-bottom: 5px solid rgb(184, 112, 5);
+  border-bottom: none solid rgb(184, 112, 5);
 }
 
 .boardtic .row .cell {
