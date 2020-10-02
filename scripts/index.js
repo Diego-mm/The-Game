@@ -45,6 +45,7 @@ const winnerDisplayP = document.querySelector('.boardtic > aside > p');
 const winnerDisplayCloseButton = document.querySelector(
   '.boardtic > aside > button',
 );
+
 const solutions = [
   [0, 1, 2],
   [3, 4, 5],
