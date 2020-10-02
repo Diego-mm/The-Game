@@ -30,12 +30,13 @@ body {
   font-size: 100px;
   color: brown;
   text-align: center;
-  margin-left: 600px;
+  margin-left: 650px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   align-content: center;
   position: relative;
+  margin-top: -93px;
 }
 
 .cell {
@@ -89,13 +90,13 @@ button {
   color: brown;
   border-color: brown;
   border-radius: 50px;
-  /* margin-top: 13px; */
+  margin-top: -7px;
   margin-left: 1200px;
 }
 
 .score {
   margin-top: -595px;
-  margin-left: 255px;
+  margin-left: 350px;
 }
 
 .boardtic aside {
@@ -128,4 +129,8 @@ button {
 
 .boardtic.winner aside {
   display: block;
+}
+
+img {
+  margin-left: 200px;
 }
